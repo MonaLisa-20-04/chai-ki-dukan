@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default value{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <img src="{% static 'chai/logo.jpg' %}" alt="Logo" class="nav-logo">
+        <ul>
+            <li><a href="{% url 'all_chai' %}"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="{% url 'shop' %}"><i class="fa-solid fa-bag-shopping"></i> Shop now</a></li>
+            <li><a href="#"><i class="fa-solid fa-star"></i> Reviews</a></li>
+            <li><a href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+            <li><a href="#"><i class="fa-solid fa-store"></i>Our stores</a></li>
+            <li><a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}{% endblock %}
+</body>
+</html>

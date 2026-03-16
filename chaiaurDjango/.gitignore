@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Django database
+db.sqlite3
+
+# Virtual environment
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# Static collected files
+staticfiles/
+
+# OS files
+.DS_Store
+Thumbs.db

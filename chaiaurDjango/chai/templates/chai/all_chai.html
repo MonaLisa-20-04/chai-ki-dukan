@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Chai Ki Dukan{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Chai Ki Dukan</h1>
+        <p>Authentic Indian chai, brewed with love. ☕</p>
+        <a href="{% url 'shop' %}" class="hero-btn"><i class="fa-solid fa-bag-shopping"></i> Shop Now</a>
+    </div>
+    <div class="hero-image">
+        <img src="{{ hero_image }}" alt="Chai">
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about">
+    <h2>Our Story</h2>
+    <p>
+        Born in the chai-loving streets of India, Chai Ki Dukan brings you 
+        hand-picked blends made from the finest leaves and spices. 
+        Every sip is a warm hug in a cup.
+    </p>
+</section>
+
+<!-- Chai Cards -->
+<section class="chai-grid">
+    <h2>Our Chais</h2>
+    <div class="cards">
+        {% for chai in chais %}
+        <div class="card">
+            <img src="{{ chai.image.url }}" alt="{{ chai.name }}">
+            <div class="card-body">
+                <h3>{{ chai.name }}</h3>
+                <p>{{ chai.description }}</p>
+                <span class="price">$ {{ chai.price }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

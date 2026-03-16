@@ -1,0 +1,507 @@
+body {
+    background: linear-gradient(180deg, #d9cf63, #e9d86c, #f2e58b);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: azure;
+}
+
+nav {
+    background-color: #eb9b5d;
+    padding: 10px 20px;
+    display: flex;              /* make nav itself a flex row */
+    align-items: center;        /* vertically center logo + links */
+    justify-content: space-between; /* logo left, links right */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;        /* ← removes default ul margin (was causing extra space) */
+    padding: 0;       /* ← removes default ul padding */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+nav ul li a {
+    color: #454814;           /* ← text color on links */
+    text-decoration: none;    /* ← removes underline */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+nav ul li a i {
+    margin-right: 6px;
+}
+
+.nav-logo {
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    object-fit: cover;
+    border-radius: 35px
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #d8cc5f, #efe38c);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    gap: 40px;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    color: #454814;
+    margin-bottom: 16px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    color: #6b5c1e;
+    margin-bottom: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-btn {
+    background-color: #eb9b5d;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* transition: background-color 0.2s; */
+}
+
+.hero-btn:hover {
+    background-color: #d4843e;
+}
+
+.hero-image img {
+    width: 560px;
+    height: 340px;
+    /* object-fit: cover; */
+    /* border-radius: 50%; */
+    border: 6px solid #eb9b5d;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+/* About */
+.about {
+    padding: 40px 80px;
+    background-color: #eb9b5d33;
+    border-radius: 16px;
+    margin: 0 80px 40px;
+    font-family: Arial, sans-serif;
+}
+
+.about h2 {
+    font-size: 32px;
+    color: #454814;
+    margin-bottom: 12px;
+}
+
+.about p {
+    font-size: 16px;
+    color: #6b5c1e;
+    line-height: 1.8;
+    max-width: 700px;
+}
+
+/* Cards */
+.chai-grid {
+    padding: 40px 80px;
+}
+
+.chai-grid h2 {
+    font-size: 36px;
+    color: #454814;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 28px;
+}
+
+.card {
+    background-color: #fff8e7;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.8);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 256px;
+    object-fit: cover;
+}
+
+.card p{
+height: 80px;
+overflow: hidden;
+}
+
+.card-body {
+    padding: 18px;
+}
+
+.card-body h3 {
+    font-size: 20px;
+    color: #454814;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 8px;
+}
+
+.card-body p {
+    font-size: 17px;
+    color: #6b5c1e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #eb9b5d;
+    font-family: Arial, sans-serif;
+}
+
+.shop-page {
+    padding: 60px 80px;
+}
+
+/* .shop-page h1 {
+    font-size: 48px;
+    color: #454814;
+    font-family: Arial, sans-serif;
+    margin-bottom: 8px;
+} */
+
+.shop-title {
+    font-size: 38px;
+    color: #454814;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 40px;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.add-to-cart-btn {
+    background-color: #eb9b5d;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.5s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #d4843e;
+}
+
+.cart-page {
+    padding: 60px 80px;
+    font-family: Arial, sans-serif;
+}
+
+.cart-page h1 {
+    font-size: 48px;
+    color: #454814;
+    margin-bottom: 40px;
+}
+
+.cart-table {
+    background-color: #fff8e7;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.cart-header, .cart-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 16px 24px;
+    align-items: center;
+}
+
+.cart-header {
+    background-color: #eb9b5d;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cart-row {
+    border-bottom: 1px solid #f0e0c0;
+    font-size: 15px;
+    color: #454814;
+}
+
+.cart-row:last-child {
+    border-bottom: none;
+}
+
+.cart-item-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cart-item-info img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-total {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 16px 24px;
+    background-color: #eb9b5d22;
+    font-weight: bold;
+    font-size: 18px;
+    color: #454814;
+}
+
+.empty-cart {
+    font-size: 20px;
+    color: #6b5c1e;
+}
+
+.empty-cart a {
+    color: #eb9b5d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Landing Page */
+body.landing-body {
+    background-color: #ebdd5d;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.landing-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Left image side */
+.landing-image {
+    flex: 1;
+    background-image: url('/media/chais/hero_img.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.landing-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.landing-overlay .landing-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #eb9b5d;
+}
+
+.landing-overlay h1 {
+    font-size: 42px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.landing-overlay p {
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f0e0c0;
+    max-width: 340px;
+    line-height: 1.6;
+}
+
+/* Right form side */
+.landing-form-side {
+    width: 440px;
+    background-color: #fff8e7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 40px;
+}
+
+/* Toggle */
+.form-toggle {
+    display: flex;
+    background-color: #f0e0c0;
+    border-radius: 30px;
+    padding: 4px;
+    margin-bottom: 30px;
+}
+
+.toggle-btn {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    background: transparent;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #6b5c1e;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-btn.active {
+    background-color: #eb9b5d;
+    color: #fff;
+}
+
+/* Form */
+.auth-form {
+    width: 100%;
+}
+
+.auth-form h2 {
+    font-size: 28px;
+    color: #454814;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 6px;
+}
+
+.auth-form .form-subtitle {
+    font-size: 14px;
+    color: #6b5c1e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 24px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #f0e0c0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    gap: 12px;
+    transition: border-color 0.2s;
+}
+
+.input-group:focus-within {
+    border-color: #eb9b5d;
+}
+
+.input-group i {
+    color: #eb9b5d;
+    font-size: 15px;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 15px;
+    color: #454814;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+}
+
+.form-submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #eb9b5d;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background-color 0.2s;
+}
+
+.form-submit-btn:hover {
+    background-color: #d4843e;
+}
+
+.form-switch {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #6b5c1e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-switch a {
+    color: #eb9b5d;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.form-error {
+    color: #c0392b;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 16px;
+    background-color: #fde8e8;
+    padding: 10px 16px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}

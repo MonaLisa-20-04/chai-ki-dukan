@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+
+<section class='cart-page'>
+    <h1>Your Cart 🛒</h1>
+
+    {% if items %}
+    <div class='cart-table'>
+        <div class='cart-header'>
+            <span>Item</span>
+            <span>Price</span>
+            <span>Qty</span>
+            <span>Subtotal</span>
+        </div>
+
+        {% for item in items %}
+        <div class="cart-row">
+            <div class="cart-item-info">
+                <img src="{{item.chai.image.url}}" alt="{{item.chai.name}}">
+                <span>{{item.chai.name}}</span>
+            </div>
+            <span>{{item.chai.price}}</span>
+            <span>{{item.quantity}}</span>
+            <span>{{item.subtotal}}</span>
+        </div>
+        {% endfor %}
+
+        <div class="cart-total">
+            <span>Total</span>
+            <span>${{cart.total_price}}</span>
+        </div>
+    </div>
+    <a href="{% url 'shop' %}" class="hero-btn" style="display:inline-block; margin-top: 30px">
+        <i class="fa-solid fa-bag-shopping"></i> Continue Shopping
+    </a>
+
+    {% else %}
+        <p class="empty-cart">Your Cart is empty. <a href="{% url "shop" %}">Continue Shopping</a></p>
+    {% endif %}
+</section>
+
+{% endblock %}

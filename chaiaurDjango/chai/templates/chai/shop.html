@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Shop now{% endblock %}
+
+{% block content %}
+<section class="shop-page">
+    <h2 class="shop-title">Pick your favourite ☕</h2>
+
+    <div class="cards">
+        {% for chai in chais %}
+        <div class="card">
+            <img src="{{chai.image.url}}" alt="{{chai.name}}">
+                <div class="card-body">
+                    <h3>{{chai.name}}</h3>
+                    <p>{{chai.description}}</p>
+                    <div class="card-footer">
+                        <span class="price">$ {{chai.price}}</span>
+                        <a href="{% url 'add_to_cart' chai.id %}" class="add-to-cart-btn">
+                        <i class="fa-solid fa-cart-plus"></i> Add to cart
+                        </a>
+                     </div>
+                </div>
+            </div>
+        {% empty %}
+        <p>No Chais Available yet.</p>
+        {% endfor %}
+    </div>
+
+</section>
+
+{% endblock %}
