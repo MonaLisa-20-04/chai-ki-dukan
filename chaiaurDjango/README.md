@@ -1,60 +1,134 @@
-# ChaiAurDjango API Documentation
+# ☕ Chai Ki Dukan
 
-This Django project now includes REST API endpoints with automatic API documentation.
+**Chai Ki Dukan** is a Django-based web application for browsing and ordering different varieties of tea.
+The project demonstrates a complete web workflow including user authentication, product browsing, and cart management.
 
-## Setup
+---
 
-1. Activate the virtual environment:
-   ```
-   & "c:\Users\monal\OneDrive\Desktop\Python\probably Django\.venv\Scripts\Activate.ps1"
-   ```
+## 🚀 Features
 
-2. Run migrations:
-   ```
-   python manage.py migrate
-   ```
+* 🔐 User Authentication (Login / Signup)
+* 🛍️ Browse available tea varieties
+* ➕ Add items to cart
+* 🛒 Cart management system
+* 🎨 Clean and modern UI
+* 📱 Responsive layout
 
-3. Start the server:
-   ```
-   python manage.py runserver
-   ```
+---
 
-## API Endpoints
+## 🛠 Tech Stack
 
-### Chai Varieties
-- **GET/POST/PUT/DELETE** `/chai/api/chai-varieties/`
-- **GET/POST/PUT/DELETE** `/chai/api/chai-varieties/{id}/`
+* **Backend:** Django (Python)
+* **Frontend:** HTML, CSS, JavaScript
+* **Database:** SQLite
+* **Version Control:** Git & GitHub
 
-### Available Teas
-- **GET/POST/PUT/DELETE** `/chai/api/available-teas/`
-- **GET/POST/PUT/DELETE** `/chai/api/available-teas/{id}/`
+---
 
-## API Documentation
+## 📂 Project Structure
 
-- **Swagger UI**: `http://127.0.0.1:8000/swagger/`
-- **ReDoc**: `http://127.0.0.1:8000/redoc/`
+```
+chai-ki-dukan/
+│
+├── manage.py
+├── requirements.txt
+├── README.md
+│
+├── chai/                 # Django project settings
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+├── chaiapp/              # Main application
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── admin.py
+│   └── migrations/
+│
+├── templates/            # HTML templates
+└── static/               # CSS, JS, images
+```
 
-## Models
+---
 
-### ChaiVarity
-- name: CharField
-- image: ImageField
-- date_added: DateTimeField
-- type: CharField (choices)
-- description: TextField
-- price: DecimalField
+## ⚙️ Installation
 
-### AvailableTea
-- name: CharField
-- image: ImageField
-- date_added: DateTimeField
-- type: CharField (choices)
-- description: TextField
-- price: DecimalField
+Clone the repository:
 
-## Technologies Used
+```
+git clone https://github.com/MonaLisa-20-04/chai-ki-dukan.git
+```
 
-- Django 6.0
-- Django REST Framework
-- drf-yasg (for OpenAPI/Swagger documentation)
-- SQLite database
+Move into the project folder:
+
+```
+cd chai-ki-dukan
+```
+
+Create a virtual environment (recommended):
+
+```
+python -m venv venv
+```
+
+Activate the virtual environment:
+
+**Windows**
+
+```
+venv\Scripts\activate
+```
+
+Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+Run migrations:
+
+```
+python manage.py migrate
+```
+
+Start the development server:
+
+```
+python manage.py runserver
+```
+
+Open your browser and go to:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## 🎯 Learning Goals
+
+This project helped me practice:
+
+* Django project structure
+* Django models and migrations
+* User authentication system
+* Cart logic implementation
+* Frontend and backend integration
+
+---
+
+## 🔮 Future Improvements
+
+* 💳 Payment gateway integration
+* ⭐ Product reviews and ratings
+* 📦 Order history
+* 🔍 Search and filtering
+
+---
+
+## 👨‍💻 Author
+
+Developed by a Computer Engineering student exploring **full-stack web development with Django**.
+
+---
