@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import chaiVarity, availableTea, Cart, cartItem
+from .models import chaiVarity, availableTea, Cart, cartItem, Review
 from django.shortcuts import get_object_or_404 , redirect
 from django.contrib.auth.decorators import login_required
 
@@ -35,3 +35,18 @@ def cart(request):
         'cart': cart,
         'items': items
     })
+
+@login_required
+def reviews(request):
+    all_reviews = Review.objects.all().order_by('-date')
+    if request.method == 'POST':
+        rating = request.POST.get('rating')
+        comment = request.POST.get('comment')
+        Review.objects.create(
+            user = request.user,
+            rating = rating,
+            comment = comment
+        )
+        return redirect('reviews')
+    return render(request, 'chai/reviews.html', {'reviews': all_reviews})
+

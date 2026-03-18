@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Reviews{% endblock %}
+
+{% block content %}
+
+<section class="reviews-page">
+
+    <h1>What our customers say ☕</h1>
+
+    <!-- Submit Review Form -->
+    <div class="review-form-card">
+        <h2>Leave a Review</h2>
+        <form method="POST" action="{% url 'reviews' %}">
+            {% csrf_token %}
+
+            <!-- Star Rating -->
+            <div class="star-input">
+                <p>Your Rating:</p>
+                <div class="stars-select">
+                    {% for i in "54321" %}
+                    <input type="radio" name="rating" id="star{{ i }}" value="{{ i }}" required>
+                    <label for="star{{ i }}"><i class="fa-solid fa-star"></i></label>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Comment -->
+            <div class="input-group review-input">
+                <i class="fa-solid fa-pen"></i>
+                <textarea name="comment" placeholder="Write your review here..." rows="3" required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn">Submit Review</button>
+        </form>
+    </div>
+
+    <!-- All Reviews -->
+    <div class="reviews-list">
+        {% for review in reviews %}
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <i class="fa-solid fa-circle-user review-avatar"></i>
+                    <span class="reviewer-name">{{ review.user.username }}</span>
+                </div>
+                <div class="review-stars">
+                    {% for i in "12345" %}
+                        {% if forloop.counter <= review.rating %}
+                            <i class="fa-solid fa-star star-filled"></i>
+                        {% else %}
+                            <i class="fa-regular fa-star star-empty"></i>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <p class="review-comment">{{ review.comment }}</p>
+            <p class="review-date">{{ review.date|date:"d M Y" }}</p>
+        </div>
+        {% empty %}
+            <p class="empty-reviews">No reviews yet. Be the first! ☕</p>
+        {% endfor %}
+    </div>
+
+</section>
+
+{% endblock %}
